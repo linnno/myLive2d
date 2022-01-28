@@ -24,7 +24,7 @@ export default {
         autoStart: true
       });
 
-      const model = await Live2DModel.from('/model/bisimai_2/bisimai_2.model3.json');
+      const model = await Live2DModel.from( process.env.NODE_ENV === 'production' ? '/myLive2d/' : '/' + 'model/bisimai_2/bisimai_2.model3.json');
       model.x = 0;
       model.y = 0;
       model.scale.set(0.1, 0.1);
