@@ -23,8 +23,8 @@ export default {
         view: this.$refs.canvas,
         autoStart: true
       });
-
-      const model = await Live2DModel.from( process.env.NODE_ENV === 'production' ? '/myLive2d/' : '/' + 'model/bisimai_2/bisimai_2.model3.json');
+      const path = `${process.env.NODE_ENV === 'production' ? '/myLive2d/' : '/'}model/bisimai_2/bisimai_2.model3.json`
+      const model = await Live2DModel.from(path);
       model.x = 0;
       model.y = 0;
       model.scale.set(0.1, 0.1);
